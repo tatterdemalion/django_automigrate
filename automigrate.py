@@ -8,12 +8,12 @@ from collections import defaultdict
 """
 A script for running migrations on branch switch.
 Usage:
-../scripts/automigrate.py develop
+automigrate.py develop
 
 This will get the differences between your branch and `develop` and run them.
 You can switch back to your branch and run the migrations again:
 
-../scripts/automigrate.py <your_branch>
+automigrate.py <your_branch>
 """
 
 target_branch = sys.argv[1]
