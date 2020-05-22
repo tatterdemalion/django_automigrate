@@ -54,7 +54,7 @@ for app in current_migration_files:
         key=lambda x: x[0]
     )
     if current_diff:
-        last = str(int(current_diff[0][0]) - 1).zfill(4)
+        last = current_migration_files[app][:-len(current_diff)][-1][1][:-3]
         print(execute(f'{prefix} python manage.py migrate {app} {last}'))
 
 print(execute(f'git checkout {target_branch}'))
